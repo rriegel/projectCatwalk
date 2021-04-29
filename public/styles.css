@@ -12,6 +12,11 @@ body {
 
 /* // ANTEO // */
 
+#af-overview-placeholder {
+  height: 570px;
+  width: 960px;
+}
+
 #af-topbar {
   /* vertical-align: baseline; */
 

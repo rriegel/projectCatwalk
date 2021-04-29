@@ -311,7 +311,7 @@ class Overview extends React.Component {
         </div>)
 
     } else {
-      return null;
+      return <div id="af-overview-placeholder"></div>;
     }
   }
 }

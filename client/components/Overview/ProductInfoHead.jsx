@@ -105,7 +105,6 @@ class ProductInfoHead extends React.Component {
       if (this.props.salePrice) {
 
         return (<div>
-          This item has not been rated<br />
           <h3>{this.props.name}</h3>
           <h5>{this.props.slogan}</h5>
           <em id="af-strikethrough">${this.props.price}</em> On Sale!
@@ -114,7 +113,6 @@ class ProductInfoHead extends React.Component {
         </div>)
       } else {
         return (<div>
-          This item has not been rated<br />
           <h3>{this.props.name}</h3>
           <h5>{this.props.slogan}</h5>
           <em>${this.props.price}</em> <br />
