@@ -10,7 +10,6 @@ const ImageGallery = (props) => {
     y: null
   })
 
-
   const handleMouseMove = (e) => {
     // if (props.imgId === "af-main-image-xl") {
     setMousePosition({
@@ -28,8 +27,6 @@ const ImageGallery = (props) => {
 
     });
   }, []);
-
-
 
   // console.log('something!')
   if (props.imgId === "af-main-image-xl") {
