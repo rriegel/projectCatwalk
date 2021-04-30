@@ -42,7 +42,7 @@ class ProductInfoHead extends React.Component {
         return (<div>
           <a id="af-read-reviews" onClick={() => {
             window.scrollTo({
-              top: 2000,
+              top: 2450,
               left: 0,
               behavior: 'smooth'
             });
@@ -74,8 +74,8 @@ class ProductInfoHead extends React.Component {
         return (<div>
           <a id="af-read-reviews" onClick={() => {
             window.scrollTo({
-              top: 1000,
-              left: 1000,
+              top: 2450,
+              left: 0,
               behavior: 'smooth'
             });
           }}> Read all {this.state.numberOfReviews} reviews! </a>
@@ -105,7 +105,6 @@ class ProductInfoHead extends React.Component {
       if (this.props.salePrice) {
 
         return (<div>
-          This item has not been rated<br />
           <h3>{this.props.name}</h3>
           <h5>{this.props.slogan}</h5>
           <em id="af-strikethrough">${this.props.price}</em> On Sale!
@@ -114,7 +113,6 @@ class ProductInfoHead extends React.Component {
         </div>)
       } else {
         return (<div>
-          This item has not been rated<br />
           <h3>{this.props.name}</h3>
           <h5>{this.props.slogan}</h5>
           <em>${this.props.price}</em> <br />

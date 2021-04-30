@@ -112,9 +112,11 @@ class Overview extends React.Component {
                       featuresArray: featuresArray,
                       numberOfReviews: numberOfReviews
 
-                    }, () => { this.setState({
-                      receivedAllData: true
-                    })})
+                    }, () => {
+                      this.setState({
+                        receivedAllData: true
+                      })
+                    })
                   })
 
                   .catch((error) => {
@@ -135,9 +137,7 @@ class Overview extends React.Component {
   }
 
 
-
   componentDidMount() {
-    // this.clearForRerender()
     this.getData()
   }
 
@@ -150,8 +150,6 @@ class Overview extends React.Component {
 
     }
   }
-
-
 
   changeDisplayImage(index) {
 
@@ -311,7 +309,10 @@ class Overview extends React.Component {
         </div>)
 
     } else {
-      return null;
+      return <div id="af-overview-placeholder">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+      </div>;
     }
   }
 }
