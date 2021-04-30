@@ -222,27 +222,27 @@ class WriteReview extends React.Component {
   }
 
   render() {
-    console.log('do they recommend?: ', this.state.selectedRecommend, typeof this.state.selectedRecommend)
+/*     console.log('do they recommend?: ', this.state.selectedRecommend, typeof this.state.selectedRecommend)
     console.log('how many stars does it get?: ', this.state.chosenStar)
     console.log('this is the username, email, and review: ', this.state.username, this.state.email, this.state.review)
     console.log('lengths from input fields in writereveiw: ', this.state.reviewSummaryLength, this.state.reviewLength)
     console.log('this is the charData: ', this.props.charData)
     console.log('this is the itemId: ', this.props.itemId)
     console.log('this is the state object that will get sent in data: ', this.state.charObject);
-
+ */
 
     return (
       <div className="mm-modal mm-display">
-        <div className="mm-modal-main">Write a Review!
-          <form>
+        <div className="mm-modal-main">
+          <form className="mm-form-center">
             <div onClick={this.onClickStars} >{this.state.starObj[this.state.chosenStar]}</div>
             <div>
-              <div><input type='text' placeholder='Username- Example: jackson11' style={{ width: '17%' }} onChange={this.onUsernameChange} ></input></div>
-              <div>For privacy reasons, do not use your full name or email address</div>
+              <div><input type='text' placeholder='Username- Example: jackson11' style={{ width: '30%' }} onChange={this.onUsernameChange} ></input></div>
+              <div style={{fontSize: 12}}>For privacy reasons, do not use your full name or email address</div>
             </div>
             <div>
-              <div><input type='text' placeholder='Email- Example: jackson11@email.com' style={{ width: '17%' }} onChange={this.onEmailChange}></input></div>
-              <div>For authentication reasons, you will not be emailed</div>
+              <div><input type='text' placeholder='Email- Example: jackson11@email.com' style={{ width: '35%' }} onChange={this.onEmailChange}></input></div>
+              <div style={{fontSize: 12}}>For authentication reasons, you will not be emailed</div>
             </div>
             <div>
               {this.state.reviewSummaryLength > 60 ?
