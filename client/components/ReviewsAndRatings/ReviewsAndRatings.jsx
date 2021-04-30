@@ -48,17 +48,20 @@ class ReviewsAndRatings extends React.Component {
       //GET request for Rating Meta data
 
     }
-    if (this.state.sort === 'helpful') {
-      this.getHelpfulReviewsForItem();
+    if (this.state.sort === 'helpful' && this.state.getRequest === false) {
+        this.getHelpfulReviewsForItem();
+        this.setState({getRequest: true});
+
     }
-    if (this.state.sort === 'newest') {
+    if (this.state.sort === 'newest' && this.state.getRequest === false) {
       this.getNewestReviewsForItem();
+      this.setState({getRequest: true})
     }
   }
 
 
   getNewestReviewsForItem() {
-    axios.get(`/reviews/${this.props.itemId}&count=10000&sort=newest`)
+    axios.get(`/reviews/${this.props.itemId}&count=1000&sort=newest`)
       .then((response) => {
         //console.log('this is review data changing: ', this.state.reviewData)
         this.setState({
@@ -73,7 +76,7 @@ class ReviewsAndRatings extends React.Component {
 
   //get for sorted by helpful
   getHelpfulReviewsForItem() {
-    axios.get(`/reviews/${this.props.itemId}&count=10000&sort=helpful`)
+    axios.get(`/reviews/${this.props.itemId}&count=1000&sort=helpful`)
       .then((response) => {
         //console.log('this is review data changing: ', this.state.reviewData)
 
@@ -89,7 +92,7 @@ class ReviewsAndRatings extends React.Component {
   }
 
   getReviewsForItem() {
-    axios.get(`/reviews/${this.props.itemId}&count=10000&sort=${this.state.sort}`)
+    axios.get(`/reviews/${this.props.itemId}&count=1000&sort=${this.state.sort}`)
       .then((response) => {
 
         this.setState({
@@ -134,7 +137,8 @@ class ReviewsAndRatings extends React.Component {
   getSortOption(event) {
     //console.log('this is the thing handler', event.target.value);
     this.setState({
-      sort: event.target.value
+      sort: event.target.value,
+      getRequest: false
     })
   }
 
@@ -154,6 +158,7 @@ class ReviewsAndRatings extends React.Component {
       return (
         <div id="mm-ratingsandreviews-overview">
           <div id="mm-ratingsandreviews-reviewlist">
+            <h2>Reviews and Ratings</h2>
             <ReviewsList stars={this.state.averageStars} itemId={this.props.itemId} reviewData={this.state.reviewData}
             numReviews={this.state.numberOfReviews} sendSort={this.getSortOption} charData={this.state.charData}/>
           </div>
@@ -171,7 +176,7 @@ class ReviewsAndRatings extends React.Component {
           <button onClick={this.handleWriteReviewClick}>
             Add a review +
           </button>
-          {this.state.showAdd ? <WriteReview hide={this.handleWriteReviewClick} charData={this.state.charData}/> : null}
+          {this.state.showAdd ? <WriteReview hide={this.handleWriteReviewClick} charData={this.state.charData} itemId={this.props.itemId}/> : null}
         </div>
       )
     }
