@@ -6,12 +6,11 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import Overview from '../Overview.jsx';
 import ImageGallery from '../ImageGallery.jsx';
-import ProductInfoHead from './ProductInfoHead.jsx';
+import ProductInfoHead from '../ProductInfoHead.jsx';
 import ProductInfoDescription from '../ProductInfoDescription.jsx';
 import ProductInfoShare from '../ProductInfoShare.jsx';
 import StyleSelector from '../StyleSelector.jsx';
 import StyleSelectorOption from '../StyleSelectorOption.jsx';
-import ImageGallery from '../ImageGallery.jsx';
 import AddToCart from '../AddToCart.jsx';
 import SizeSelector from '../SizeSelector.jsx';
 import SizeQuantitySelector from '../SizeQuantitySelector.jsx';

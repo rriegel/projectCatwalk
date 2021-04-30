@@ -565,7 +565,6 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
 }
 
 .rr-action-button {
