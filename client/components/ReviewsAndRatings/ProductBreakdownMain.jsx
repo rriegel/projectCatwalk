@@ -63,7 +63,7 @@ class ProductBreakdownMain extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="mm-productrating-style">
         {this.makeTableObj(this.doSomethingWithData(this.props.charData))}
       </div>
     )
