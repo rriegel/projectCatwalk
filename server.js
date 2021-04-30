@@ -289,40 +289,25 @@ app.post('/reviews', function(req, res) {
   })
 })
 
-
-/* app.get('/reviews/:productId',  function(req, res) {
-  let url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/?product_id=${req.params.productId}`
-  axios.get(url, {
+app.put('/reviews/:review_id/helpful', function(req, res) {
+  let url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/${req.params.review_id}/helpful`;
+  console.log("params in the put request", req.params.review_id)
+  let config = {
     headers: {
       'Authorization': process.env.GITHUB_API_KEY
     }
-  })
-    .then((response) => {
-      res.status(202).send(response.data);
-    })
-    .catch((error) => {
-      console.log('error on /reviews/:productId');
-      res.status(404).send(error)
-    })
-}) */
+  }
 
-/* app.get('/reviews/:productId:sort',  function(req, res) {
-  console.log('this is the get request WE ARE LOOKING FOR')
-  let url = `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/reviews/?product_id=${req.params.productId}&count=1000${req.params.sort}`
-  console.log('THIS IS US DOING THE THING')
-  axios.get(url, {
-    headers: {
-      'Authorization': process.env.GITHUB_API_KEY
-    }
+  axios.put(url, config)
+  .then(response => {
+    res.status(204).send("A helpful mark has been added")
   })
-    .then((response) => {
-      res.status(202).send(response.data);
+  .catch(error => {
+    res.status(404).send(error);
+  })
 
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-}) */
+})
+
 
 
 let port = 8080

@@ -905,6 +905,10 @@ body {
   padding: 15px;
 }
 
+.mm-textareaNone {
+  resize: none;
+}
+
 .mm-form-center {
   text-align: center;
 }
