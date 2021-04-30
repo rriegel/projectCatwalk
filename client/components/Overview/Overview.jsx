@@ -137,9 +137,7 @@ class Overview extends React.Component {
   }
 
 
-
   componentDidMount() {
-    // this.clearForRerender()
     this.getData()
   }
 
@@ -152,8 +150,6 @@ class Overview extends React.Component {
 
     }
   }
-
-
 
   changeDisplayImage(index) {
 

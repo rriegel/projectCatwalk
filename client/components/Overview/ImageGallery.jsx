@@ -28,7 +28,7 @@ const ImageGallery = (props) => {
     });
   }, []);
 
-  // console.log('something!')
+  // console.log('x and y', mousePosition.x, mousePosition.y)
   if (props.imgId === "af-main-image-xl") {
 
 
@@ -41,7 +41,7 @@ const ImageGallery = (props) => {
               onClick={props.shrink}><AiOutlineCompress/></div>
 
             <img
-              style={{ marginLeft: ((-mousePosition.x) / 2) - 1000, marginTop: (-mousePosition.y) / 2 }}
+              style={{ marginLeft: ((-mousePosition.x) / 2) - 1000, marginTop: ((-mousePosition.y) / 2) }}
               id={props.imgId}
               onClick={props.click}
               src={props.images[props.currentIndex]['url']} >
