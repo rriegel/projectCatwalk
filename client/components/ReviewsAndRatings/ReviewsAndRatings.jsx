@@ -173,7 +173,7 @@ class ReviewsAndRatings extends React.Component {
         <div>
           <h3>This product doesn't have any reviews yet. Be the first one to write one!</h3>
 
-          <button onClick={this.handleWriteReviewClick}>
+          <button onClick={this.handleWriteReviewClick} className="tv_app_btn">
             Add a review +
           </button>
           {this.state.showAdd ? <WriteReview hide={this.handleWriteReviewClick} charData={this.state.charData} itemId={this.props.itemId}/> : null}

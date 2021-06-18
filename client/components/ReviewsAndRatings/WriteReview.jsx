@@ -202,8 +202,8 @@ class WriteReview extends React.Component {
     console.log('this is getting clicked', this.state.reviewSummaryLength, this.state.reviewLength, this.state.chosenStar)
     /* if the review summary and review are the right length */
     if ((this.state.reviewSummaryLength <= 60) && (this.state.reviewLength >= 50 && this.state.reviewLength <= 1000)) {
-      console.log('inside the submission')
-      //this.informationPost();
+      //console.log('inside the submission')
+      this.informationPost();
       this.props.close();
     } else {
       console.log('this is not going to work')
@@ -211,9 +211,9 @@ class WriteReview extends React.Component {
   }
 
   changeStuff(e) {
-    console.log('char click', e.target.value, e.target.name)
+    //console.log('char click', e.target.value, e.target.name)
     var obj = this.state.charObject;
-    obj[this.charIdGet(e.target.name)] = e.target.value;
+    obj[this.charIdGet(e.target.name)] = Number(e.target.value);
     this.setState({
       charObj: obj
     })
@@ -245,15 +245,15 @@ class WriteReview extends React.Component {
               <div style={{fontSize: 12}}>For authentication reasons, you will not be emailed</div>
             </div>
             <div>
+              <div><textarea type='text' value={this.state.summary} placeholder='Example: Best Purchase Ever!' onChange={this.onSummaryChange} cols="40" rows="2" className="mm-textareaNone"></textarea></div>
               {this.state.reviewSummaryLength > 60 ?
-              <div><textarea type='text' placeholder='Example: Best Purchase Ever!' onChange={this.onSummaryChange} cols="40" rows="2">{this.state.summary}</textarea>
-              <p>Max 60 characters, there are currently {this.state.reviewSummaryLength}</p></div>
-              : <textarea type='text' placeholder='Example: Best Purchase Ever!' onChange={this.onSummaryChange} cols="40" rows="2"></textarea>}
+              <div style={{color: "red"}}>Too many characters, max 60</div>
+              : null}
 
               {this.state.summaryError ? <div style={{color:"red"}}>Summary must be less than 60 characters</div> : null}
             </div>
             <div>
-              <textarea placeholder='Why did you like the product or not?' onChange={this.onReviewChange} cols="40" rows="5"></textarea>
+              <textarea placeholder='Why did you like the product or not?' onChange={this.onReviewChange} cols="40" rows="5" className="mm-textareaNone"></textarea>
               {this.state.reviewTooShort ? <div style={{color:"red"}}>Review must be at least 50 characters</div> : null}
               {this.state.reviewTooLong ? <div style={{color:"red"}}>Review must be less than 1000 characters</div> : null}
             </div>
